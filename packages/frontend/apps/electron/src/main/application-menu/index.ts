@@ -11,7 +11,7 @@ export const applicationMenuEvents = {
   /**
    * File -> New Doc
    */
-  onNewPageAction: (fn: (type: 'page' | 'edgeless') => void) => {
+  onNewPageAction: (fn: (type: 'page' | 'edgeless' | undefined) => void) => {
     const sub = applicationMenuSubjects.newPageAction$.subscribe(fn);
     return () => {
       sub.unsubscribe();
